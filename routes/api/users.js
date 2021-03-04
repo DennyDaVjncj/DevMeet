@@ -15,7 +15,7 @@ const { default: axios } = require('axios');
 // module.exports = router;
 
 
-router.get('/', (req, res) => {
+router.get('/me', (req, res) => {
   axios({
     method: 'get',
     url: 'https://randomuser.me/api/?results=50&inc=name,email,dob,phone,picture,location',
@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
     res.json(data)
   }).catch(err => res.json(err))
 });
+
 
 
 

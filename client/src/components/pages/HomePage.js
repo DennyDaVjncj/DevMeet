@@ -10,12 +10,14 @@ const HomePage = props => {
   const user = state.auth.user;
 
   useEffect(() => {
-    if (!state.auth.isAuthenticated)
+    if (!state.auth.isAuthenticated){
       props.history.push('/login');
+    }
 
     API.getUser()
     .then(res => console.log({ res }))
     .catch(err => console.log({ err }));
+  
   }, [ state, props ]);
 
   const onLogoutClick = e => {
