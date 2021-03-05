@@ -6,6 +6,6 @@ import {Store} from '../../store';
 //may YOU please explain '...rest' syntax & Component
 const SecureScan=({component:Component,...rest})=>{
     const {state}=useContext(Store);
-        return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/hompage'/>)}/>    
+        return <Route {...rest} render={props=>state.auth.isAuthenticated===true ? (<Component{...props}/>):(<Redirect to='/login'/>)}/>    
 }
 export default SecureScan;//I can use this function within a <HashRouter>, use to 'getUserConfirmation'... I suppose, I can use this component for authentication?

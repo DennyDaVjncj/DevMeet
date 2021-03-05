@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useContext, useState } from 'react';
 import { Store } from '../../store';
 import { logoutUser } from '../../store/actions/authActions';
 import Button from '@material-ui/core/Button';
@@ -7,15 +7,18 @@ import TinderCards from './TinderCards';
 
 const HomePage = props => {
   const { state, dispatch } = useContext(Store);
+  const [users, setUsers] = useState([])
   const user = state.auth.user;
 
   useEffect(() => {
-    if (!state.auth.isAuthenticated)
+    if (!state.auth.isAuthenticated){
       props.history.push('/login');
+    }
 
     API.getUser()
-    .then(res => console.log({ res }))
+    .then(res => setUsers(res.data.results.map(user => { return {name: `${user.name.first} ${user.name.last}`, url: user.picture.thumbnail}})))
     .catch(err => console.log({ err }));
+  
   }, [ state, props ]);
 
   const onLogoutClick = e => {
@@ -26,7 +29,7 @@ const HomePage = props => {
 
   return (
     <div className="container valign-wrapper" style={{ height: '75vh' }}>
-          <TinderCards />
+          <TinderCards people={users} />
       <div className="row">
         <div className="col s12 center-align">
           <h4>
