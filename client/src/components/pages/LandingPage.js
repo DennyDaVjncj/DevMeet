@@ -1,70 +1,111 @@
-import {Typography,Grid,Button,Paper,BottomNavigationAction,BottomNavigation} from '@material-ui/core';
-import {Restore,Favorite,LocationOn} from '@material-ui/icons';
-import React,{useContext} from 'react';
-import {Store} from '../../store';//this will be filled with functions for capturing client data
-import {Link} from 'react-router-dom';
-import 'fontsource-roboto';
-// import FavoriteIcon from '@material-ui/icons/Favorite'
+import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
+import Button from '@material-ui/core/Button';
+import CameraIcon from '@material-ui/icons/PhotoCamera';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Grid from '@material-ui/core/Grid';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+import Link from '@material-ui/core/Link';
 
-const LandingPage=props=>{
-    const {state}=useContext(Store)//(store) was temporarily removed from the useContext()
-    console.log({state,props});
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
-    return(
-        // <div className='container valign-wrapper' style={{height:'75vh'}}>
-        //     <div className='row'>
-        //         <div className='col s12 center-align'>
-        // <Grid container direction='column' justify='center' alignItems='center'>
-        //     <Grid item>
-        //     <Paper>
-        //         <Typography>
-        //             <b>Meet</b> the <b>Dev</b> of your dreams...
-        //         </Typography>
-        //     </Paper>
-        //     </Grid>                                               
-        // </Grid>
-        //             <p className='flow-text grey-text text-darken-1'>
-        //                 The perfect place for to build lasting connections + stellar applications
-        //             </p>
-        //             <br/>
-        //             <div className="col s6">
-        //                 <Link to="/register" className="btn btn-large waves-effect waves-light hoverable blue accent-3" style={{
-        //                 width: '140px',
-        //                 borderRadius: '3px',
-        //                 letterSpacing: '1.5px',
-        //                 }}>
-        //                 Register
-        //                 </Link>
-        //             </div>
-        //             <div>
-        //             {/* 
-        //                 <Link to="/login" className="btn btn-large btn-flat waves-effect white black-text" style={{
-        //                 width: '140px',
-        //                 borderRadius: '3px',
-        //                 letterSpacing: '1.5px',
-        //                 }}>
-        //                 Login
-        //                 </Link> */}
-        //                 <Button style={{fontSize:19}}variant='filled'color='secondar'>Login</Button>{/**model after app stack for routing off of button */}
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
-        <Grid container direction='column' justify='center' alignItems='center' style={{height:'75vh'}}>
-            <Grid item spacing={3}>
-                <Paper elevation={3}>
-                    <Typography>
-                        da Vjncj dissonance
-                    </Typography>
-                </Paper>
-                <BottomNavigation value={3}
-                showLabels>
-                    <BottomNavigationAction label='Recents'icon={<Restore/>}/>
-                    <BottomNavigationAction label='Favorites'icon={<Favorite/>}/>{/**this link can lead to a store() that renders the users last 5 likes */}
-                </BottomNavigation>                
-            </Grid>
-        </Grid>
-    )
-};
-export default LandingPage;
-//add Link within Buttons by adding in 'Component prop & to='
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    marginRight: theme.spacing(2),
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6),
+  },
+  heroButtons: {
+    marginTop: theme.spacing(4),
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8),
+  },
+  card: {
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  cardMedia: {
+    paddingTop: '56.25%', // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
+  footer: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(6),
+  },
+}));
+
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+export default function LandingPage() {
+  const classes = useStyles();
+
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <main>
+        {/* Hero unit */}
+        <div className={classes.heroContent}>
+          <Container maxWidth="sm">
+            <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
+           DevMeet.
+            </Typography>
+            <Typography variant="h5" align="center" color="textSecondary" paragraph>
+              Social networking made for Developers that allows users to swipe to like or dislike other profiles based on their photos, posts, and favorite coding language.
+            </Typography>
+            <div className={classes.heroButtons}>
+              <Grid container spacing={2} justify="center">
+                <Grid item>
+                  <Button variant="contained" color="primary" href='/register'>
+                   Register
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button variant="outlined" color="primary">
+                    Login
+                  </Button>
+                </Grid>
+              </Grid>
+            </div>
+          </Container>
+        </div>
+       
+      </main>
+      {/* Footer */}
+      <footer className={classes.footer}>
+        <Typography variant="h6" align="center" gutterBottom>
+          Footer
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
+          Something here to give the footer a purpose!
+        </Typography>
+        <Copyright />
+      </footer>
+      {/* End footer */}
+    </React.Fragment>
+  );
+}

@@ -2,19 +2,6 @@ const router = require('express').Router();
 const usersController = require('../../controllers/usersController');
 const { default: axios } = require('axios');
 
-//matched with '/api/users'
-// router
-// .route('/')
-// .get(usersController.findAll);
-
-//matches with '/api/users/:id'
-// router
-// .route(':id')
-// .get(usersController.findById);
-
-// module.exports = router;
-
-
 router.get('/me', (req, res) => {
   axios({
     method: 'get',

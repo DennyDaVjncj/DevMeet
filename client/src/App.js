@@ -37,10 +37,10 @@ const App=()=>{
     <BrowserRouter>
       <Header className='textCentering'/>
       <Container maxWidth='lg'>
-        <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
+        <Switch>
           <SecureScan exact path='/homepage' component={HomePage}/>
 
         </Switch>
