@@ -85,7 +85,7 @@ export default function LandingPage() {
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button variant="outlined" color="primary">
+                  <Button variant="outlined" color="primary" href="/login">
                     Login
                   </Button>
                 </Grid>
