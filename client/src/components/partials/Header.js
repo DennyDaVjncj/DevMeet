@@ -1,22 +1,29 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import PersonIcon from '@material-ui/icons/Person';
 import ForumIcon from '@material-ui/icons/Forum';
 import './header.css'
 import IconButton from '@material-ui/core/IconButton';
-
+import { Link } from "react-router-dom";
 //api calls to material-ui library
 
-const Header=props=>{
+function Header({ backButton}){
     return(
         <div className="header">
+          <Link to="/homepage">
           <IconButton>
-          <PersonIcon fontSize="large" className="header__icon"/>
-          <img className="header__logo" src="https://png.pngtree.com/png-clipart/20191121/original/pngtree-korean-love-symbol-png-image_5147489.jpg" alt="logo"/>      
-          <ForumIcon fontSize="large" className="header__icon"/>
-     
+          <PersonIcon fontSize="large" className="header__icon" />
+          </IconButton>
+          </Link>
+          <Link to="/homepage">
+          <img className="header__logo" src="https://www.seekpng.com/png/full/478-4782814_logo-people-in-circle-png.png" alt="devmeet logo"/>
+          </Link>
+          <Link to="/chat">
+          <IconButton>      
+          <ForumIcon fontSize="large" className="header__icon" />     
       </IconButton>
+      </Link>
     </div>
     )
 }
+
 export default Header;

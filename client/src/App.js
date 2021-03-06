@@ -11,6 +11,9 @@ import Login from './components/pages/Login';
 import SecureScan from './components/fireWall/SecureScan';
 import {Container} from '@material-ui/core';
 import setAuthToken from './utils/setAuthToken';
+import TinderCard from 'react-tinder-card';
+import SwipeButton from './components/pages/SwipeButtons';
+import "./App.css"
 // import TinderCards from 'react-tinder-card';
 // import TinderCards from './components/pages/TinderCards';
 
@@ -34,19 +37,29 @@ const App=()=>{
   },[dispatch]);
 
   return(
+    <div >
     <BrowserRouter>
-      <Header className='textCentering'/>
+      <Header backButton="/homepage" />
       <Container maxWidth='lg'>
+      <Switch>
         <Route exact path='/' component={LandingPage}/>
         <Route exact path='/register' component={Register}/>
         <Route exact path='/login' component={Login}/>
-        <Switch>
+          <Route exact path="/chat">
+            <h1><span>::: PAGE UNDER CONSTRUCTION :::</span></h1>
+          </Route>
+          {/* <Route path="/homepage" >
+          <TinderCard />
+          <SwipeButton />
+          </Route> */}
+        
           <SecureScan exact path='/homepage' component={HomePage}/>
 
         </Switch>
       </Container>
       {/**footer goes here */}    
     </BrowserRouter>
+    </div>
   );
 }
 export default App;
