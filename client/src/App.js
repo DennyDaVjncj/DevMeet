@@ -39,7 +39,7 @@ const App=()=>{
   return(
     <div >
     <BrowserRouter>
-      <Header backButton="/homepage" />
+      {/* <Header backButton="/homepage" /> */}
       <Container maxWidth='lg'>
       <Switch>
         <Route exact path='/' component={LandingPage}/>
