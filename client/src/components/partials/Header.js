@@ -27,3 +27,26 @@
 // }
 
 // export default Header;
+import React from 'react';
+import particle from '../../logo.svg';
+import {Grid,Paper, Typography} from '@material-ui/core';
+import {ThreeDRotation} from '@material-ui/icons';
+import {Link} from 'react-router-dom';
+
+const Header=()=>{
+    return(
+        <div>{/**address position on outermost element*/}
+            <Grid container display='row'justify='flex-start'alignItems='flex-end'>
+                <Grid item xs={12}>
+                    <Paper >
+                        <ThreeDRotation/>
+                        <Typography variant='h5'>
+                            da Vjncj dissonance
+                        </Typography>
+                    </Paper>
+                </Grid>
+            </Grid>
+        </div>
+    )
+}
+export default Header;
