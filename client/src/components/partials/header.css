@@ -1,18 +1,4 @@
-.header {
+.positioning{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-.header__logo{
-    height: 40px;
-    /* object fit makes sure pic is pixel perfect */
-    object-fit: contain;
-    width: 90px;
-}
-
-.header__icon{
-    padding: -10px;
-   
+    justify-content:space-between;
 }
