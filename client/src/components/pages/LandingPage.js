@@ -110,19 +110,20 @@
 //   );
 // }
 import React from 'react';
-import {Grid,Paper, Typography} from '@material-ui/core';
+import {Grid,Paper,Typography} from '@material-ui/core';
+import logo from '../../logo.svg';
 
 const LandingPage=()=>{
   return(
     <div>
-      <Grid container>
+      <Grid container >
         <Grid item xs={12}>
-          <Paper>
-            <Typography variant='h4'>
-              practice makes progress, as well as adds perspective
+          <Paper className='LandingPageContent'>
+            <Typography variant='p'>
+              this is where aim and intent shall paint to the screen
             </Typography>
-          </Paper>
-        </Grid>
+          </Paper>          
+        </Grid>        
       </Grid>
     </div>
   )

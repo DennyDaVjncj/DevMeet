@@ -37,28 +37,28 @@ const App=()=>{
   },[dispatch]);
 
   return(
-    <div >
-    <BrowserRouter>
-      {/* <Header backButton="/homepage" /> */}
-      <Container maxWidth='lg'>
-      <Switch>
-        <Route exact path='/' component={LandingPage}/>
-        <Route exact path='/register' component={Register}/>
-        <Route exact path='/login' component={Login}/>
-          <Route exact path="/chat">
-            <h1><span>::: PAGE UNDER CONSTRUCTION :::</span></h1>
-          </Route>
-          {/* <Route path="/homepage" >
-          <TinderCard />
-          <SwipeButton />
-          </Route> */}
-        
-          <SecureScan exact path='/homepage' component={HomePage}/>
+    <div>
+      <BrowserRouter>
+        <Header/>
+        <Container maxWidth='lg'>
+          <Switch>
+            <Route exact path='/' component={LandingPage}/>
+            <Route exact path='/register' component={Register}/>
+            <Route exact path='/login' component={Login}/>
+              <Route exact path="/chat">
+                <h1><span>::: PAGE UNDER CONSTRUCTION :::</span></h1>
+              </Route>
+              {/* <Route path="/homepage" >
+              <TinderCard />
+              <SwipeButton />
+              </Route> */}
+            
+              <SecureScan exact path='/homepage' component={HomePage}/>
 
-        </Switch>
-      </Container>
-      {/**footer goes here */}    
-    </BrowserRouter>
+            </Switch>
+        </Container>
+        {/**footer goes here */}    
+      </BrowserRouter>
     </div>
   );
 }
