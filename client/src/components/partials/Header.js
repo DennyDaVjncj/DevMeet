@@ -39,7 +39,9 @@ const Header=()=>{
             <Paper elevation={1} className='Header'>
                 <ThreeDRotation/>
                 <Button variant='contained'color='secondary'>
-                    Login
+                    <Link to='/login'>
+                        Login
+                    </Link>
                 </Button>
             </Paper>                
         </div>
