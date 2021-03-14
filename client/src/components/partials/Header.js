@@ -29,18 +29,18 @@
 // export default Header;
 import React from 'react';
 import particle from '../../logo.svg';
-import {Grid,Paper,Typography} from '@material-ui/core';
+import {Button,Grid,Paper,Typography} from '@material-ui/core';
 import {ThreeDRotation} from '@material-ui/icons';
 import {Link} from 'react-router-dom';
 
 const Header=()=>{
     return(
         <div>{/**address position on outermost element*/}       
-            <Paper className='DevMeet-NavBar'elevation={3}>
+            <Paper elevation={1} className='Header'>
                 <ThreeDRotation/>
-                <Typography variant='p'>
-                    da Vjncj dissonance, spacing occur
-                </Typography>
+                <Button variant='contained'color='secondary'>
+                    Login
+                </Button>
             </Paper>                
         </div>
     )
