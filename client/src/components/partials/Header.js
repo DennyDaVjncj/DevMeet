@@ -32,18 +32,19 @@ import particle from '../../logo.svg';
 import {Button,Grid,Paper,Typography} from '@material-ui/core';
 import {ThreeDRotation} from '@material-ui/icons';
 import {Link} from 'react-router-dom';
+import 'fontsource-roboto';
 
 const Header=()=>{
     return(
-        <div>{/**address position on outermost element*/}       
-            <Paper elevation={1} className='Header'>
-                <ThreeDRotation/>
-                <Button variant='contained'color='secondary'>
-                    <Link to='/login'>
+        <div className='Header'>           
+            <ThreeDRotation/>
+            <Button href='#text-buttons'color='primary'size='large'>
+                <Link to='/login'>
+                    <Typography variant='button'color='secondary'>
                         Login
-                    </Link>
-                </Button>
-            </Paper>                
+                    </Typography>
+                </Link>
+            </Button>                            
         </div>
     )
 }
