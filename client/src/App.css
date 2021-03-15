@@ -3,21 +3,19 @@
   pointer-events: visiblePainted;
 } */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .DevMeet.logo {
     animation: DevMeet-logo-comeUpWithSomethingCool infinite 20s linear;
   }
-}
+} */
 
 .Header {
-  background-color: #282c34;
   min-height: 20vh;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-around;
-  font-size: calc(10px + 2vmin);
-  color: red;  
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);   
 }
 .LandingPageContent{
   display:flex;
@@ -25,18 +23,14 @@
   justify-content:center;
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
 }/*what purpose if any?*/ 
-.homepage {
-  display: block;
-  justify-content: space-between;
-}
-@keyframes DevMeet-logo-spin {
+/* @keyframes DevMeet-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
