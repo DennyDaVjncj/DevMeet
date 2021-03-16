@@ -1,3 +1,26 @@
+import React from 'react';
+import particle from '../../logo.svg';
+import {Button,Grid,Paper,Typography} from '@material-ui/core';
+import {ThreeDRotation} from '@material-ui/icons';
+import 
+import {Link} from 'react-router-dom';
+import 'fontsource-roboto';
+
+const Header=()=>{
+    return(
+        <div className='Header'>           
+            <ThreeDRotation/>
+            <Button href='#text-buttons'color='primary'size='large'>
+                <Link to='/login'>
+                    <Typography variant='button'color='secondary'>
+                        Login
+                    </Typography>
+                </Link>
+            </Button>                            
+        </div>
+    )
+}
+export default Header;
 // import React from 'react';
 // import PersonIcon from '@material-ui/icons/Person';
 // import ForumIcon from '@material-ui/icons/Forum';
@@ -27,25 +50,3 @@
 // }
 
 // export default Header;
-import React from 'react';
-import particle from '../../logo.svg';
-import {Button,Grid,Paper,Typography} from '@material-ui/core';
-import {ThreeDRotation} from '@material-ui/icons';
-import {Link} from 'react-router-dom';
-import 'fontsource-roboto';
-
-const Header=()=>{
-    return(
-        <div className='Header'>           
-            <ThreeDRotation/>
-            <Button href='#text-buttons'color='primary'size='large'>
-                <Link to='/login'>
-                    <Typography variant='button'color='secondary'>
-                        Login
-                    </Typography>
-                </Link>
-            </Button>                            
-        </div>
-    )
-}
-export default Header;
